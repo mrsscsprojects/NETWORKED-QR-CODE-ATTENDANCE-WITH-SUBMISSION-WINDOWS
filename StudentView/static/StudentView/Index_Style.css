@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #0351a5;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  animation: slideInDown 1s ease-out;
+}
+
+/* Animation for sliding effect */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header-title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.attendance-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-top: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.student-list {
+  list-style: none;
+  padding: 0;
+}
+
+.student {
+  margin-bottom: 10px;
+}
+
+.student-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+/* Custom checkbox styles */
+.student-label input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #808080c3;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.student-label input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.student-label input[type="checkbox"]:checked::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  border-radius: 50px;
+  top: 39%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease;
+}
+
+.student-label:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.02);
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.footer {
+  background-color: #0350a1;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+}
+
+/* Optional: Add a slide-in animation for the footer */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
