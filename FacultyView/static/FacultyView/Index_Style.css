@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e4e4e4af;
+  color: #333;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+header {
+  background: linear-gradient(to right, #005ec2e6, #002b56);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  animation: slideInDown 0.5s ease-out;
+  margin-bottom: -80px; /* Reduce the gap after the header */
+}
+
+header h1 {
+  font-size: 32px; /* Adjusted font size */
+}
+
+@keyframes slideInDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+.header-text {
+  padding-top: 10px;
+}
+
+main {
+  display: flex;
+  gap: 2em;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  animation: fadeInUp 1s ease-in;
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.attendance-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.453);
+  text-align: center;
+  width: 30em;
+  height: fit-content;
+}
+
+
+
+.attendance-card h2 {
+  font-size: 20px; /* Adjusted font size */
+  margin-bottom: 20px;
+}
+
+.attendance-card img {
+  width: 280px;
+  height: 280px;
+  margin: 20px auto;
+  display: block;
+}
+
+.hint {
+  font-size: 14px; /* Adjusted font size */
+  color: #666;
+}
+
+.present-list {
+  margin: 2em;
+}
+
+.attendance-form {
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #000000 transparent;
+}
+
+.attendance-form::-webkit-scrollbar {
+  width: 8px;
+}
+
+.attendance-form::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+}
+
+.attendance-form::-webkit-scrollbar-track {
+  background-color: #ddd;
+}
+
+.student-list {
+  max-height: 170px; /* Set the height as needed */
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f9f9f9; /* For Firefox */
+}
+
+/* Webkit-based browsers (Chrome, Safari) */
+.student-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.student-list::-webkit-scrollbar-track {
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.student-list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 8px;
+  border: 2px solid #f9f9f9;
+}
+
+.student {
+  margin: 2%;
+}
+
+.student-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #828282;
+  border-radius: 10px;
+  padding: 4px 8px;
+  width: 300px;
+  height: 45px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Customize the scrollbar for WebKit browsers */
+.student-label::-webkit-scrollbar {
+  height: 8px; /* Set the height of the horizontal scrollbar */
+}
+
+.student-label::-webkit-scrollbar-thumb {
+  background-color: #616161; /* Set the color of the scrollbar thumb */
+  border-radius: 10px; /* Optional: add rounded corners to the scrollbar thumb */
+}
+
+.student-label:hover {
+  background-color: #e1e1e1e8;
+  transform: translateY(-2px);
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 12px; /* Adjusted font size */
+  color: #ff4949;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-button:hover {
+  color: #ff4444;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 500px) {
+  main {
+    flex-direction: column;
+  }
+}
+
+.attendance-card-submitted {
+  padding: 20px;
+}
+
+.footer {
+  background: linear-gradient(to right, #005ec2c8, #002b56);
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-text {
+  text-align: center;
+  margin: 0 20px; /* Adjust margins as needed */
+  font-size: 14px; /* Adjusted font size */
+}
+
+.footer-left {
+  float: left;
+}
+
+.footer-right {
+  float: right;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

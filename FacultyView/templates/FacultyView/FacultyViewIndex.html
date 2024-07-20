@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Attendance System</title>
+    <link rel="stylesheet" href="{% static 'FacultyView/Index_Style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Jain College of Engineering and Technology, Hubballi</h1>
+      <h2>Attendance Portal</h2>
+    </header>
+    <main>
+      <div class="marked-list">
+        <sectiom>
+        <h2>Student Count : {{ students|length }}</h2><br>
+        <form class="attendance-form" method="POST">
+          <ul class="student-list">
+            {% csrf_token %} {% for student in students %}
+            <li class="student">
+              <label class="student-label">
+                <span class="student-name">
+                  {{student.s_roll}} - {{ student.s_fname }} {{student.s_lname}}
+                </span>
+                <button
+                  type="submit"
+                  name="student_id"
+                  value="{{student.s_roll}}"
+                  class="delete-button"
+                >
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </label>
+            </li>
+            {% endfor %}
+          </ul>
+        </form>
+        <a href="{% url 'add_manually' %}"><button>Add Manually</button></a>
+        <a href="/"><button>Submit</button></a>
+      </div>
+      <div class="attendance-container">
+        <div class="attendance-card">
+          <h2>
+            Connect to College Wi-Fi and Scan the QR Code to Mark Attendance
+          </h2>
+          {% comment %}
+          <a href="{% url 'add_manually' %}">
+            {% endcomment %}
+            <img
+              src="{% static 'FacultyView/qrcode.png' %}"
+              alt="QR Code"
+              width="200"
+              height="200"
+            />
+          </a>
+          <p class="hint">Please scan the QR code to mark your attendance.</p>
+        </div>
+      </div>
+    </main>
+   
+  </body>
+</html>
